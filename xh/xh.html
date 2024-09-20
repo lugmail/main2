@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper.css">
+</head>
+<style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+	.swiper-wrapper{
+	  /* 通过改变animation-timing-function 制作弹性切换效果 */
+		    transition: 2s cubic-bezier(0.68, -0.4, 0.27, 1.34) 0.2s;
+		}
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+  </style>
+
+
+<body>
+    <body>
+        <header>
+            <span>信恒汽车用品批发</span>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="shop.html">商品</a></li>
+                    <li><a >推荐</a></li>
+                    <li><a >关于</a></li>
+                </ul>
+            </div>
+        </header>
+        <!-- Swiper -->
+         <div id="onebanner">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/9.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="img/10.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="img/11.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="img/12.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="img/13.jpg" alt=""></div>
+           
+          </div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <h1>联系电话：XXXXXXXX</h1>
+<script src="./js/swiper.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+	  speed: 2000,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>

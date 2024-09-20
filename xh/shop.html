@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="box">
+        <div class="tupian">
+            <img src="img/1.jpg" alt="" class="img1">
+            <div class="mark" style="display: none;">
+
+            </div>
+        </div>
+
+        <div class="fdj" style="display: none;">
+            <img src="img/1.jpg" alt="" class="fdjImg">
+        </div>
+        <div class="bannerdad">
+            <button class="left">&lt;</button>
+            <div class="banner">
+                <img src="img/1.jpg" class="show2 bg">
+                <img src="img/2.jpg" class="show2">
+                <img src="img/3.jpg" class="show2">
+                <img src="img/4.jpg" class="show2">
+                <img src="img/5.jpg" class="show2">
+                <img src="img/6.jpg" class="show2">
+                <img src="img/7.jpg" class="show2">
+            </div>
+            <button class="right">&gt;</button>
+        </div>
+    </div>  
+
+</body>
+
+</html>
+<script type="module">
+    import { fdj } from "./js/change.js"
+    import { move } from "./js/banner.js"
+    import { shop } from "./js/shop.js"
+    import { recom } from "./js/recom.js"
+    var show2 = document.querySelectorAll(".show2")
+    var tupian = document.querySelector(".tupian")
+    var box = document.querySelector(".box")
+    var footer = document.querySelector("footer")
+    //切换
+    for (let i = 0; i < show2.length; i++) {
+        show2[i].onclick = function () {
+            var img = show2[i]
+            var imgUrl = img.src
+            box.firstElementChild.firstElementChild.src = imgUrl
+            box.children[1].firstElementChild.src = imgUrl
+            for(var j=0;j<show2.length;j++){
+                show2[j].classList = ""
+            }
+            show2[i].classList = "bg"
+            
+        }
+    }
+    // 鼠标移入
+    tupian.onmouseover = function (e) {
+        var e1 = e || window.event
+        var mark = document.querySelector(".mark")
+        var fdj = document.querySelector(".fdj")
+        mark.style.display = "block"
+        fdj.style.display = "block"
+    }
+    // 鼠标移出
+    tupian.onmouseout = function (e) {
+        var mark = document.querySelector(".mark")
+        var fdj = document.querySelector(".fdj")
+        mark.style.display = "none"
+        fdj.style.display = "none"
+    }
+    // 鼠标移动
+    tupian.onmousemove = function (e) {
+        var e1 = e || window.event
+        fdj(e1)
+    }
+
+    box.onclick = function(){
+        move()
+    
+    }
+
+
+    shop()
+
+    
+</script>
+</body>
+</html>
